@@ -1,4 +1,4 @@
-fn calculate(nums: Vec<i32>) -> i32 {
+fn find_pivot_index(nums: Vec<i32>) -> i32 {
     let mut left_sum = 0;
 
     let sum: i32 = nums.iter().sum();
@@ -13,10 +13,15 @@ fn calculate(nums: Vec<i32>) -> i32 {
     -1
 }
 
-fn main() {
-    let arr = vec![-1, -1, -1, -1, -1, 0];
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-    let result = calculate(arr);
+    #[test]
+    fn test_one() {
+        let arr = vec![-1, -1, -1, -1, -1, 0];
+        let index = find_pivot_index(arr);
 
-    println!("The index is {}", result);
+        assert_eq!(2, index);
+    }
 }

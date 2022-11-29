@@ -13,20 +13,26 @@ fn search_insert(nums: Vec<i32>, target: i32) -> i32 {
     return index as i32;
 }
 
-fn main() {
-    let nums_one = vec![1, 3, 5, 6];
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-    let nums_two = vec![1, 3, 5, 6, 7];
+    #[test]
+    fn test_one() {
+        let nums = vec![1, 3, 5, 6];
+        let target = 5;
 
-    let target_one = 5;
+        let index = search_insert(nums, target);
 
-    let target_two = 8;
+        assert_eq(index, 2);
+    }
+    #[test]
+    fn test_two() {
+        let nums = vec![1, 3, 5, 6, 7];
+        let target = 8;
 
-    let index_one = search_insert(nums_one, target_one);
+        let index = search_insert(nums, target);
 
-    let index_two = search_insert(nums_two, target_two);
-
-    assert_eq!(index_one, 2);
-
-    assert_eq!(index_two, 5);
+        assert_eq(index, 5);
+    }
 }

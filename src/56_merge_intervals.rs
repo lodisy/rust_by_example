@@ -24,8 +24,6 @@ fn merge(intervals: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
     return arr;
 }
 
-fn main() {}
-
 #[cfg(test)]
 mod tests {
     use super::*;
